@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.quyduoi.asm_kot104_md18309_ph41939.MainActivity
 import com.quyduoi.asm_kot104_md18309_ph41939.R
 import com.quyduoi.asm_kot104_md18309_ph41939.ui.theme.ASM_KOT104_MD18309_PH41939Theme
 import com.quyduoi.asm_kot104_md18309_ph41939.ui.theme.nunitosanBold
@@ -68,7 +69,7 @@ fun KhungManThongTin() {
         .background(Color(0xF808080))) {
         Spacer(modifier = Modifier.height(40.dp))
         CustomTieuDeTrang(leftIcon = R.drawable.tim_kiem, title = "Profile", rightIcon = R.drawable.dang_xuat, onLeftIconClick = { context ->
-            context.startActivity(Intent(context, ManTrangChu::class.java))
+            context.startActivity(Intent(context, MainActivity::class.java))
         }, onRightIconClick = {
             context -> context.startActivity(Intent(context, ManDangNhap::class.java))
         })

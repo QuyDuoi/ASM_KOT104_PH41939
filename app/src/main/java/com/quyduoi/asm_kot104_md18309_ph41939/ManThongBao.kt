@@ -36,6 +36,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.quyduoi.asm_kot104_md18309_ph41939.MainActivity
 import com.quyduoi.asm_kot104_md18309_ph41939.R
 import com.quyduoi.asm_kot104_md18309_ph41939.ui.theme.ASM_KOT104_MD18309_PH41939Theme
 import com.quyduoi.asm_kot104_md18309_ph41939.ui.theme.merriBold
@@ -107,7 +108,7 @@ class ManThongBao : ComponentActivity() {
                             },
                             borderEnabled = true,
                             onClick = {
-                                val intent = Intent(this@ManThongBao, ManTrangChu::class.java)
+                                val intent = Intent(this@ManThongBao, MainActivity::class.java)
                                 startActivity(intent)
                             })
                     }

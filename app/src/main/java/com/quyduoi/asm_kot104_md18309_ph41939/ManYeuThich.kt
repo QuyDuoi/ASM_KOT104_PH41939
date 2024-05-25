@@ -60,7 +60,7 @@ class ManYeuThich : ComponentActivity() {
             ASM_KOT104_MD18309_PH41939Theme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier.fillMaxSize().padding(bottom = 40.dp),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val sanPhams = remember {
@@ -155,22 +155,31 @@ fun KhungManYeuThich() {
             leftIcon = R.drawable.tim_kiem,
             title = "Favorites",
             rightIcon = R.drawable.gio_hang,
-            onLeftIconClick = {}
+            onLeftIconClick = {
+
+            },
+            onRightIconClick = { context ->
+                context.startActivity(Intent(context, ManGioHang::class.java))
+            }
         )
         Spacer(modifier = Modifier.height(10.dp))
         Box(modifier = Modifier.fillMaxSize()) {
             ListYeuThich(sanPhams = sanPhams, onRemove = { sanPham -> sanPhams.remove(sanPham) })
-            Box(
+            Column (
                 modifier = Modifier
                     .fillMaxWidth()
+                    .height(80.dp)
+                    .padding(vertical = 1.dp)
                     .align(Alignment.BottomCenter),
-                contentAlignment = Alignment.Center
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
             ) {
                 CustomButton(
                     width = 335.dp,
                     height = 50.dp,
                     cornerRadius = 10.dp,
                     backgroundColor = Color.Black,
+                    modifier = Modifier.padding(horizontal = 20.dp),
                     textContent = {
                         Text(
                             text = "Add all to my cart",
@@ -196,7 +205,7 @@ fun ListYeuThich(sanPhams: List<SanPhamYeuThich>, onRemove: (SanPhamYeuThich) ->
         modifier = Modifier
             .padding(8.dp)
             .background(Color.White)
-            .height(600.dp)
+            .height(580.dp)
     ) {
         itemsIndexed(sanPhams) { index, sanPham ->
             SanPhamYeuThichItem(

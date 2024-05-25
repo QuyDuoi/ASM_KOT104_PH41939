@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.quyduoi.asm_kot104_md18309_ph41939.MainActivity
 import com.quyduoi.asm_kot104_md18309_ph41939.R
 import com.quyduoi.asm_kot104_md18309_ph41939.ui.theme.ASM_KOT104_MD18309_PH41939Theme
 import com.quyduoi.asm_kot104_md18309_ph41939.ui.theme.gelasioFontFamily
@@ -62,7 +63,7 @@ class ManGioHang : ComponentActivity() {
                     Column(modifier = Modifier.fillMaxSize()) {
                         Spacer(modifier = Modifier.height(40.dp))
                         CustomTieuDeTrang(leftIcon = R.drawable.quay_lai, title = "My cart", onLeftIconClick = {context ->
-                            context.startActivity(Intent(context, ManTrangChu::class.java))
+                            context.startActivity(Intent(context, MainActivity::class.java))
                         })
                         ListGioHang(
                             sanPhams = sanPhams,

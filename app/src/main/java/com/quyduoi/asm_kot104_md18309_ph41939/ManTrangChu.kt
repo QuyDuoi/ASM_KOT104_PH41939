@@ -269,11 +269,14 @@ fun MatHangRow(cacMatHang: List<MatHang>) {
 
 @Composable
 fun SanPhamItem (sanPham: SanPham) {
-
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .padding(16.dp)
             .wrapContentHeight()
+            .clickable {
+                context.startActivity(Intent(context, ManChiTietSanPham::class.java))
+            }
     ) {
         Box(
             modifier = Modifier
@@ -284,8 +287,12 @@ fun SanPhamItem (sanPham: SanPham) {
                 contentDescription = sanPham.ten,
                 modifier = Modifier.fillMaxSize()
             )
+
             IconButton(
-                onClick = {  },
+                onClick = {
+                    context.startActivity(Intent(context, ManGioHang::class.java))
+
+                },
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
                     .padding(3.dp)

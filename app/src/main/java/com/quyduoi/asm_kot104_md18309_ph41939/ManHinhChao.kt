@@ -138,7 +138,7 @@ fun CustomButton(
 ) {
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier
+        modifier = modifier
             .size(width, height)
             .background(backgroundColor, shape = RoundedCornerShape(cornerRadius))
             .clickable { onClick() }
